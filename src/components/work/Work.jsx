@@ -1,7 +1,7 @@
 import './Work.scss';
 
 const Work = () => {
-  return <div className="work">dfsafasd</div>;
+  return <div className="work" id="work"></div>;
 };
 
 export default Work;

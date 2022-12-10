@@ -10,6 +10,8 @@
     position: absolute;
     top: 7rem;
 
+    scroll-behavior: smooth;
+
     scroll-snap-type: y mandatory;
 
     > * {
