@@ -53,6 +53,11 @@
 
     h3 {
       font-size: 3rem;
+
+      span {
+        font-size: inherit;
+        color: crimson;
+      }
     }
 
     a {
