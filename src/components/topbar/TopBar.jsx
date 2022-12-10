@@ -4,9 +4,13 @@ import PersonIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
 
-const TopBar = () => {
+const TopBar = (props) => {
+  // console.log(props.menuOpen);
+
+  // const classMenuButton = props.menuOpen ? 'topbar active' : 'topbar';
+
   return (
-    <div className="topbar active">
+    <div className={props.menuOpen ? 'topbar active' : 'topbar'}>
       <div className="wrapper">
         <div className="left">
           <a href="#intro" className="logo">
@@ -22,7 +26,7 @@ const TopBar = () => {
           </div>
         </div>
         <div className="right">
-          <div className="hamburger">
+          <div className="hamburger" onClick={props.onClick}>
             <span className="line1"></span>
             <span className="line2"></span>
             <span className="line3"></span>
