@@ -1,0 +1,22 @@
+.App {
+  //background-color: yellow;
+  height: 100vh;
+
+  .sections {
+    width: 100%;
+    height: calc(100vh - 7rem);
+    background-color: lightsalmon;
+
+    position: absolute;
+    top: 7rem;
+
+    scroll-snap-type: y mandatory;
+
+    > * {
+      width: 100vw;
+      height: calc(100vh - 7rem);
+      overflow: hidden;
+      scroll-snap-align: start;
+    }
+  }
+}
