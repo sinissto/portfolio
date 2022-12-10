@@ -1,0 +1,55 @@
+@import '../../global.scss';
+
+.menu {
+  position: absolute;
+  top: 7rem;
+  right: -30rem;
+  z-index: 3;
+
+  width: 30rem;
+  height: calc(100vh - 7rem);
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 1s ease;
+
+  &.active {
+    //transform: translateX(30rem);
+    background-color: $mainColor;
+    right: 0;
+  }
+
+  .menuList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 300;
+    height: 50vh;
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .menuListItem {
+    //margin-bottom: 1rem;
+    padding: 1rem;
+
+    &:hover {
+      font-weight: 500;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: inherit;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import Portfolio from './components/portfolio/Portfolio';
 import Work from './components/work/Work';
 import Testimonials from './components/testemonials/Testimonials';
 import Contact from './components/contact/Contact';
+import Menu from './components/menu/Menu';
 
 import './App.scss';
 import { useState } from 'react';
@@ -19,6 +20,12 @@ function App() {
   return (
     <div className="App">
       <TopBar onClick={menuHandler} menuOpen={menuOpen} />
+      {/*{menuOpen && <Menu />}*/}
+      <Menu
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        onClick={menuHandler}
+      />
       <div className="sections">
         <Intro />
         <Portfolio />
