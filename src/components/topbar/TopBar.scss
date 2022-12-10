@@ -20,18 +20,43 @@
     justify-content: space-between;
 
     .left {
-      .logo:hover,
-      .logo:active {
-        color: $mainColor;
-        text-decoration: none;
-      }
+      display: flex;
+      align-items: center;
 
       .logo:visited,
       .logo:link {
+        //margin-right: 4rem;
+
         color: inherit;
         text-decoration: none;
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 700;
+      }
+
+      .logo:hover,
+      .logo:active {
+        color: red;
+        text-decoration: none;
+      }
+
+      .itemContainer {
+        margin-left: 3rem;
+        display: flex;
+        align-items: center;
+
+        .icon {
+          font-size: 1.8rem;
+          margin-right: 0.5rem;
+        }
+
+        span {
+          font-size: 1.5rem;
+          font-weight: 500;
+        }
+      }
+
+      .itemContainer:last-child {
+        margin-right: 0;
       }
     }
   }
