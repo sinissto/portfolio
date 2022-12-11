@@ -1,6 +1,5 @@
 import './TopBar.scss';
 
-import PersonIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
 

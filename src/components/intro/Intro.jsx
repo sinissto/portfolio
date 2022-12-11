@@ -5,7 +5,8 @@ import { useEffect, useRef } from 'react';
 const Intro = () => {
   const textRef = useRef();
   useEffect(() => {
-    init(textRef.current, {
+    const elRef = textRef.current;
+    init(elRef, {
       showCursor: false,
       backDelay: 1500,
       typeSpeed: 50,
