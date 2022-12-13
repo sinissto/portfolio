@@ -1,9 +1,18 @@
 import './Portfolio.scss';
 import PortfolioLIst from '../portfolioList/PortfolioLIst';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import {
+  featuredPortfolio,
+  contentPortfolio,
+  webPortfolio,
+  designPortfolio,
+  mobilePortfolio,
+} from '../../data';
 
 const Portfolio = () => {
   const [selected, setSelected] = useState('featured');
+  const [data, setData] = useState([]);
 
   const list = [
     {
@@ -28,6 +37,28 @@ const Portfolio = () => {
     },
   ];
 
+  useEffect(() => {
+    switch (selected) {
+      case 'featured':
+        setData(featuredPortfolio);
+        break;
+      case 'web':
+        setData(webPortfolio);
+        break;
+      case 'mobile':
+        setData(mobilePortfolio);
+        break;
+      case 'design':
+        setData(designPortfolio);
+        break;
+      case 'content':
+        setData(contentPortfolio);
+        break;
+      default:
+        setData(featuredPortfolio);
+    }
+  }, [selected]);
+
   return (
     <div className="portfolio" id="portfolio">
       <h1 className="">Portfolio</h1>
@@ -44,53 +75,51 @@ const Portfolio = () => {
       </ul>
 
       <div className="container">
-        <div className="item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"
-            alt="Banking App"
-          />
-          <h3>Banking App</h3>
-        </div>
+        {data.map((item) => (
+          <div key={item.id} className="item">
+            <img src={item.img} alt={item.title} />
+            <h3>{item.title}</h3>
+          </div>
+        ))}
+        {/*  <div className="item">*/}
+        {/*    <img*/}
+        {/*      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"*/}
+        {/*      alt="Banking App"*/}
+        {/*    />*/}
+        {/*    <h3>Banking App</h3>*/}
+        {/*  </div>*/}
 
-        <div className="item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"
-            alt="Banking App"
-          />
-          <h3>Banking App</h3>
-        </div>
+        {/*  <div className="item">*/}
+        {/*    <img*/}
+        {/*      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"*/}
+        {/*      alt="Banking App"*/}
+        {/*    />*/}
+        {/*    <h3>Banking App</h3>*/}
+        {/*  </div>*/}
 
-        <div className="item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"
-            alt="Banking App"
-          />
-          <h3>Banking App</h3>
-        </div>
+        {/*  <div className="item">*/}
+        {/*    <img*/}
+        {/*      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"*/}
+        {/*      alt="Banking App"*/}
+        {/*    />*/}
+        {/*    <h3>Banking App</h3>*/}
+        {/*  </div>*/}
 
-        <div className="item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"
-            alt="Banking App"
-          />
-          <h3>Banking App</h3>
-        </div>
+        {/*  <div className="item">*/}
+        {/*    <img*/}
+        {/*      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"*/}
+        {/*      alt="Banking App"*/}
+        {/*    />*/}
+        {/*    <h3>Banking App</h3>*/}
+        {/*  </div>*/}
 
-        <div className="item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"
-            alt="Banking App"
-          />
-          <h3>Banking App</h3>
-        </div>
-
-        <div className="item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"
-            alt="Banking App"
-          />
-          <h3>Banking App</h3>
-        </div>
+        {/*  <div className="item">*/}
+        {/*    <img*/}
+        {/*      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU"*/}
+        {/*      alt="Banking App"*/}
+        {/*    />*/}
+        {/*    <h3>Banking App</h3>*/}
+        {/*  </div>*/}
       </div>
     </div>
   );
