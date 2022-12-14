@@ -44,7 +44,7 @@ const Testimonials = () => {
                 alt="Right Arrow"
                 className="left"
               />
-              <img className="user" src={testi.img} alt="Image" />
+              <img className="user" src={testi.img} alt="" />
               <img className="right" src={testi.icon} alt="Icon" />
             </div>
             <div className="center">{testi.desc}</div>
